@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>latihan bootstrap</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- ini link untuk menghubungkan icon yg ada di bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+  <!-- ini navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="fb.jpg" width="40">
+            Zakaria
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+             <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">about</a>
+            </li>
+            <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+
+<!-- ini banner -->
+
+    <div class="container-fluid banner mt-5">
+
+      <!-- ini alert -->
+      <div class="container d-flex justify-content-center">
+            <div class="alert alert-success alert-dismissible col-lg-6 col-ofsite-3 mt-5 " id="AlertFormulir">
+                <i class="bi bi-check-square" ></i> Formulir berhasil dikirim, klik <a href="http://google.com" target="blank" class="alert-link">di sini </a> untuk melihat detail
+                <!-- ini button untuk menghilangkan alert setelah dia muncul, lalu di class alert nya ditambahkan (alert-dismissible) -->
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div> 
+      </div>
+       <!-- akhir alert -->
+
+      <div class="container banner-content col-lg-6 mb-5">
+        <div class="text-center">
+          <p class="fs-1">
+            selamat datang di zeky's web design
+          </p>
+          <p class="d-none d-sm-block">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam architecto esse hic laboriosam omnis sint voluptas, eaque eveniet dolorem, autem culpa, nemo at mollitia unde id dolor corrupti quas repellat.
+          </p>
+
+          <!-- ini tombol button -->
+          
+             <button type="submit" class="btn btn-outline-info my-3 mb-5"  data-bs-toggle="modal" data-bs-target="#exampleModal">Join now</button>
+          
+          <!-- akhir button -->
+        </div> 
+      </div>
+    </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Formulir pendaftaran</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div>
+            <label for="nama" class="form-label">Nama</label>
+            <input type="text" class="form-control" id="nama">
+          </div>
+          <div>
+            <label for="handphone">No. handphone</label>
+            <input type="number" class="form-control" id="handphone">
+          </div>
+          <div>
+            <label for="tanggal">Tanggal meeting</label>
+            <input type="date" class="form-control" id="tanggal">
+          </div>
+          <div>
+            <label for="jam">Jam meeting</label>
+            <input type="time" class="form-control" id="jam">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        <button type="button" class="btn btn-info" onclick="jalankanSpinner()" id="forKirim">Kirim</button>
+        <button class="btn btn-info" id="forLoading" disabled>
+           <div class="spinner-border spinner-border-sm" role="status"></div>
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- ini accordion -->
+
+  <div class="accordion accordion-flush my-5 container col-sm-6 col-md-7 col-lg-5" id="accordionFlushExample">
+    <h2 class="text-center mb-5">Mengapa memakai jasa kami</h2>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            <img src="fb.jpg" width="30" alt=""> Design profesional
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima dolores, corporis natus, tempore ullam, eos at delectus asperiores voluptatibus quis incidunt eum explicabo dignissimos laudantium optio neque nihil necessitatibus alias!
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            Proses cepat
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi tempore dolores, assumenda tenetur a unde repellat quibusdam architecto ipsa, temporibus ullam ipsam impedit necessitatibus fugit! Ratione incidunt, amet rerum. Iusto!
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingfour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefour" aria-expanded="false" aria-controls="flush-collapsefour">
+            Jaminan kualitas
+          </button>
+        </h2>
+        <div id="flush-collapsefour" class="accordion-collapse collapse" aria-labelledby="flush-headingfour" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi tempore dolores, assumenda tenetur a unde repellat quibusdam architecto ipsa, temporibus ullam ipsam impedit necessitatibus fugit! Ratione incidunt, amet rerum. Iusto!
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            Biaya menyesuaikan
+          </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic eveniet temporibus pariatur adipisci dolorem aliquam illo voluptatum, quidem eum nulla ipsa provident ab voluptatem ratione ex, quod laboriosam blanditiis exercitationem.
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+  <!-- ini carousel -->
+
+  <div class="container-fluid carousel-content py-5">
+    <div class="container" style="text-shadow: 1px 1px 0.5px black;">
+      <h2 class="text-center mb-5">Example testimony of our products </h2>
+         <div id="carouselExampleCaptions" class="carousel slide col-lg-8 offset-lg-2" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label=" Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="coding-3.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Project 1</h5>
+                  <p>Some representative placeholder content for the first slide.</p>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <img src="coding-4.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Project 2</h5>
+                  <p>Some representative placeholder content for the second slide.</p>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <img src="coding.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Project 3</h5>
+                  <p>Some representative placeholder content for the third slide.</p>
+                </div>
+              </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+  </div>
+
+  <!-- ini bootstrap image -->
+
+  <div class="container-fluid py-5">
+    <div class="container">
+      <h2 class="text-center">Mitra kami saat ini</h2>
+      <div class="row d-flex justify-content-around">
+        <div class="kotak col-12 mt-5 ">
+          <a href="">
+              <img src="img/ayam.jpg" alt="" class="mt-2 d-block mx-auto">
+              <h4 class="text-center mt-2">Ayam gepuk</h4>
+          </a>
+        </div>
+
+        <div class="kotak col-12 mt-5 ">
+          <a href="">
+              <img src="img/star.jpg" alt="" class="mt-2 d-block mx-auto">
+              <h4 class="text-center mt-2">Starbucks</h4>
+          </a>
+        </div>
+
+        <div class="kotak col-12 mt-5 ">
+          <a href="">
+              <img src="img/burger.jpg" alt="" class="mt-2 d-block mx-auto">
+              <h4 class="text-center mt-2">Burger king</h4>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- quote -->
+
+  <div class="container-fluid py-5 bg-dark text-light">
+    <div class="container">
+      <h2 class="text-center mb-5">Apa kata Qustomer kami</h2>
+
+      <div class="col-12">
+        <figure class="text-center text-md-start">
+            <blockquote class="blockquote">
+              <p>A well-known quote, contained in a blockquote element.</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+              <i> uzumaki naruto</i>
+        </figcaption>
+      </figure> 
+      </div>
+
+      <div class="col-12">
+        <figure  class="text-center text-md-end">
+            <blockquote class="blockquote">
+              <p>A well-known quote, contained in a blockquote element.</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+              <i>Hatake kakashi</i>
+        </figcaption>
+      </figure> 
+      </div>
+
+      <div class="col-12">
+        <figure class="text-center text-md-start">
+            <blockquote class="blockquote">
+              <p>A well-known quote, contained in a blockquote element.</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+              <i>Uchiha sasuke</i>
+        </figcaption>
+      </figure> 
+      </div>
+
+      <div class="col-12">
+        <figure  class="text-center text-md-end">
+            <blockquote class="blockquote">
+              <p>A well-known quote, contained in a blockquote element.</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+              <i>Azuma sarutobi</i>
+        </figcaption>
+      </figure> 
+      </div>
+
+      <div class="col-12">
+        <figure  class="text-center text-md-start">
+            <blockquote class="blockquote">
+              <p>A well-known quote, contained in a blockquote element.</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+              <i>Jiraya sensei</i>
+        </figcaption>
+      </figure> 
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- card -->
+  <div class="container-fluid py-5">
+    <div class="container">
+      <!-- ini popover -->
+      <h2 class="text-center mb-5">
+      Pilihan paket design <a tabindex="0" data-bs-trigger="focus" class="btn btn-info" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="dengan pilihan paket ini anda bisa menyeseuaikan dengan dana dan kebutuhan anda ">
+       ? </a>
+      </h2>
+    <!-- akhir popover -->
+      <div class="row">
+        <!-- ini list -->
+
+        <div class="col-lg-3 col-md-4 mb-5">
+            <ol class="list-group list-group-numbered">
+            <a href="">
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">Paket 1</div>
+                    Cras justo odio
+                  </div>
+                  <span class="badge bg-info rounded-pill">14</span>
+                </li>
+            </a>
+            <a href="">
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">Paket 2</div>
+                    Cras justo odio
+                  </div>
+                  <span class="badge bg-info rounded-pill">8</span>
+                </li>
+            </a>
+            <a href="">
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">Paket 3</div>
+                    Cras justo odio
+                  </div>
+                  <span class="badge bg-info rounded-pill">4</span>
+                </li>
+            </a>
+          </ol>
+        </div>
+
+        <!-- ini card gambar -->
+
+        <div class="col-lg-9 col-md-8">
+        <div class="row">
+         <div class="col-lg-4 col-md-6 col-sm-4 mx-auto mb-5">
+            <div class="card">
+              <img src="img/gambar-1.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title text-center">Paket 1</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                <!-- ini dropdown -->
+                <button class="btn btn-outline-info d-block mx-auto" data-bs-toggle="dropdown">Lihat detail</button>
+                <ul class="dropdown-menu dropdown-menu-dark"  aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+                <!-- akhir dropdown -->
+              </div>
+            </div>
+         </div>
+
+         <div class="col-lg-4 col-md-6 col-sm-4 mx-auto mb-5">
+            <div class="card">
+              <img src="img/gambar-2.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title text-center">Paket 2</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                <!-- ini dropdown -->
+                <button class="btn btn-outline-info d-block mx-auto" data-bs-toggle="dropdown">Lihat detail</button>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+                <!-- akhir dropdown -->
+              </div>
+            </div>
+         </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-4 mx-auto mb-5">
+            <div class="card">
+              <img src="img/gambar-3.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title text-center">Paket 3</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                <!-- ini dropdown -->
+                <button class="btn btn-outline-info d-block mx-auto" data-bs-toggle="dropdown">Lihat detail</button>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+                <!-- akhir dropdown -->
+              </div>
+            </div>
+         </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- ini table -->
+<div class="container-fluid bg-dark">
+  <div class="container">
+    <h2 class="text-light text-center mb-5 pt-5">Teknologi yang kami gunakan</h2>
+    <table class="table table-dark table-hover mb-5 table-sm ">
+      <div class="table-responsive">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">bahasa program</th>
+              <th scope="col">html + css</th>
+              <th scope="col">frame work</th>
+              <th scope="col">database</th>
+              <th scope="col">waktu pengerjaan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>php</td>
+              <td>ya</td>
+              <td>laravel</td>
+              <td>sql</td>
+              <td>30 hari</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+               <td>java script</td>
+              <td>ya</td>
+              <td>node js</td>
+              <td>my sql</td>
+              <td>40 hari</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>c++</td>
+              <td></td>
+              <td>tidak</td>
+              <td>my sql</td>
+              <td>30 hari</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+
+<!-- form -->
+<div class="container-fluid py-5 bg-dark text-light">
+  <div class="container">
+    <h2 class="text-center">Hubungi kami</h2>
+    <div class="offset-lg-2 col-lg-8 mt-5">
+
+      <!-- ini alert -->
+      <div class="alert alert-success alert-dismissible mb-5" id="myAlert">
+
+        <i class="bi bi-check-square"></i> Formulir berhasil dikirim, klik <a href="http://google.com" target="blank" class="alert-link">di sini </a> untuk melihat detail
+        <!-- ini button untuk menghilangkan alert setelah dia muncul, lalu di class alert nya ditambahkan (alert-dismissible) -->
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <!-- akhir alert -->
+
+      <div class="mb-3">
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="exampleFormControlInput1" class="form-label">Nama depan</label>
+            <input type="nama" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="masukan nama depan">
+          </div>
+          <div class="col-lg-6">
+            <label for="exampleFormControlInput1" class="form-label">Nama belakang</label>
+            <input type="nama" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="masukan nama belakang">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="Username" class="form-label">Username</label>
+        <div class="input-group">
+          <span class="input-group-text">@</span>
+          <input type="text" class="form-control form-control-sm">
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="name@example.com">
+        <label class="form-text"><i>*email anda tidak akan kami sebarluaskan</i></label>
+      </div>
+
+      <div class="mb-3">
+        <label for="jenis kelamin" class="form-label ">Jenis kelamin</label>
+        <select class="form-select" id="jenis kelamin">
+          <option value="Laki-laki">Laki-laki</option>
+          <option value="Perempuan">Perempuan</option>
+          <option value="Lainnya">Lainnya</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <input class="form-check-input" id="flexRadioDefault1" type="radio" id="complain" name="kategori">
+        <label for="complain">Complain</label>
+      </div>
+      <div class="mb-3">
+        <input class="form-check-input" id="flexRadioDefault1"  type="radio" id="Saran" name="kategori">
+        <label for="Saran">Saran</label>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">komentar</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <button class="btn btn-info w-100" onclick="simpanForm()" id="btnKirim">kirim</button>
+
+
+        <button class="btn btn-info w-100 mt-2" id="btnLoading" disabled>
+           <div class="spinner-border spinner-border-sm" role="status"></div>
+        </button>
+      </div>
+  </div>
+  </div>
+</div>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

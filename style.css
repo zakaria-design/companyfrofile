@@ -1,0 +1,35 @@
+
+
+.banner {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.5)), url('coding-2.jpg');
+    background-size: cover;
+  }
+  .banner-content{
+    height: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .carousel-content {
+    background-color: #212529;
+    height: 50%;
+    color: white;
+  }
+
+/* ini css image bootstrap */
+  .kotak {
+    width: 280px;
+    height: 190px;
+    border: 1px solid rgba(200, 200, 200, .8);
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px rgba(200, 200, 200, .8);
+  }
+  .kotak:hover{
+    border: 2px solid skyblue;
+  }
+  a {
+    text-decoration: none;
+  }
+  
